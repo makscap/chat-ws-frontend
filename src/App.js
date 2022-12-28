@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Chat from "./Chat/Chat";
 
 function App() {
+  const [isAuth, setIsAuth] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className=" bg-[#000000] p-[20px]">
+      {isAuth ? (
+        <Chat />
+      ) : (
+        <div>
+          <form>
+            <label for="name">Name:</label>
+            <input type="text" name="name" />
+            <label for="companion">Companion:</label>
+            <input type="text" name="companion" />
+
+            <button onClick={setIsAuth(!isAuth)}>JOIN</button>
+          </form>
+        </div>
+      )}
     </div>
   );
 }

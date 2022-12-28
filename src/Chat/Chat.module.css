@@ -1,0 +1,8 @@
+.chat {
+  display: flex;
+  border: 1px solid black;
+  height: calc(100vh - 40px);
+  border-radius: 20px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
